@@ -1,8 +1,14 @@
-FROM golang:1.16-alpine
-RUN mkdir /app
+FROM golang:alpine AS builder
+RUN apk update && apk add --no-cache git
 WORKDIR /demo-golang
-COPY . .
+COPY main.go .
 RUN go mod init github.com/virtrixke/ap-kdg-workshop-kubernetes
-RUN CGO_ENABLED=0 go build -installsuffix 'static' -o /app
+RUN go mod download
+RUN go build main.go
+
+# FROM alpine
+FROM golang:alpine
+WORKDIR /app
+COPY --from=builder /demo-golang/main /app
 EXPOSE 8080
-ENTRYPOINT ["/app"]
+CMD ["./main"]
