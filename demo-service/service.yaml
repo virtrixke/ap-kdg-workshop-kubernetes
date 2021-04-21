@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: svc-demo-golang
 spec:
-  type: ClusterIP
   ports:
     - name: http
       port: 8080
