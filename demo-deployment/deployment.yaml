@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-golang
+  labels:
+    app: demo-golang
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-golang
+  template:
+    metadata:
+      labels:
+        app: demo-golang
+    spec:
+      containers:
+      - name: demo-golang
+        image: demoacrvinvli01.azurecr.io/demo-golang:v0.0.1

@@ -1,0 +1,1 @@
+az deployment group create -f ./main.bicep -g rg-vinvli-01
