@@ -1,0 +1,1 @@
+docker build -t demo-golang:0.0.1 .
