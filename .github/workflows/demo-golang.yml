@@ -27,7 +27,10 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
+        registry: acrvinvli01.azurecr.io
         context: ./demo-golang
-        #  file: ./Dockerfile
         push: true
-        tags: demo-golang:v0.0.1
+        tags: demo-golang:v0.0.1,demo-golang:latest
+
+    - name: Image digest
+      run: echo ${{ steps.docker_build.outputs.digest }}
