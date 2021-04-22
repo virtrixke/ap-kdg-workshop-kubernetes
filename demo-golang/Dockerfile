@@ -1,6 +1,5 @@
 FROM golang:alpine AS builder
 RUN apk update && apk add --no-cache git
-WORKDIR /
 COPY main.go .
 RUN go mod init github.com/virtrixke/ap-kdg-workshop-kubernetes
 RUN go mod download
