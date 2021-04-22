@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-golang
+  labels:
+    app: demo-golang
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-golang
+  template:
+    metadata:
+      labels:
+        app: demo-golang
+    spec:
+      containers:
+        - name: demo-golang
+          image: acrvinvli01.azurecr.io/demo-golang:v0.0.1
+      envFrom:
+        - configMapRef:
+            name: cm-demo-golang
+        - secretRef:
+            name: secr-demo-golang
+      volumeMounts:
+        - mountPath: "/tmp"
+          name: "pvol"
+  volumes:
+    - name: "pvol"
+      persistentVolumeClaim:
+        claimName: "pvc-demo-golang"

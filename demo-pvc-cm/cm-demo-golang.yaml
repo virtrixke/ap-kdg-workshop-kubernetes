@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: cm-demo-golang
 data:
-  something: useful
-  username: golangrunner
-  env: prod
+  SOMETHING: useful
+  USERNAME: golangrunner
+  ENV: prod
