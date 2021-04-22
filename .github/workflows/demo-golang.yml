@@ -13,10 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Welcome developer
-      run: echo welcome developer!
-
     - name: Login to Azure ACR
       uses: docker/login-action@v1 
       with:
@@ -30,7 +26,7 @@ jobs:
       with:
         context: ./demo-golang
         # push: true
-        tags: demo-golang:v0.0.1,demo-golang:latest
+        tags: acrvinvli01.azurecr.io/demo-golang:v0.0.1,acrvinvli01.azurecr.io/demo-golang:latest
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
