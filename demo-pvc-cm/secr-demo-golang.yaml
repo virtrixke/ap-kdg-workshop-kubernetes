@@ -4,5 +4,4 @@ metadata:
   name: secr-demo-golang
 type: Opaque
 data:
-  DB_PASSWORD: cDZbUGVXeU5e0ZW
-  REDIS_PASSWORD: AAZbUGVXeU5e0ZB
+  DB_PASSWORD: YmFyCg==
