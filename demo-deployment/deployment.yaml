@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: demo-golang
-        image: demoacrvinvli01.azurecr.io/demo-golang:v0.0.1
+        image: acrvinvli01.azurecr.io/demo-golang:v0.0.1
