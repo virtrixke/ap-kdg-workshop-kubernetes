@@ -4,6 +4,7 @@ WORKDIR /demo-golang
 COPY main.go .
 RUN go mod init github.com/virtrixke/ap-kdg-workshop-kubernetes
 RUN go mod download
+RUN go mod tidy
 RUN go build main.go
 
 # FROM alpine
