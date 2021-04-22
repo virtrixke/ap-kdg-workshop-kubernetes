@@ -27,7 +27,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: ./
-        # file: ./Dockerfile
+        context: ./demo-golang
+        #  file: ./Dockerfile
         push: true
         tags: demo-golang:v0.0.1
