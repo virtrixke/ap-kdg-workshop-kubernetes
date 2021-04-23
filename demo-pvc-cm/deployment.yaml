@@ -17,6 +17,7 @@ spec:
       containers:
         - name: demo-golang
           image: acrvinvli01.azurecr.io/demo-golang:v0.0.1
+          imagePullPolicy: Always
           resources:
             requests:
               memory: "32Mi"
