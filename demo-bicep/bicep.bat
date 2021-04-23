@@ -1,1 +1,2 @@
-az deployment group create -f ./main.bicep -g rg-vinvli-01
+az account set -s <subscription>
+az deployment group create -f ./main.bicep -g <resource-group>
