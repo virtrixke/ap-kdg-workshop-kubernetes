@@ -11,7 +11,7 @@ func helloWorld(w http.ResponseWriter, r *http.Request){
 		panic(err)
 	}
 
-    fmt.Fprintf(w, "Hello students. This is running on ", name)
+    fmt.Sprintf("Hello students. This is running on ", name)
 }
 
 func main() {
