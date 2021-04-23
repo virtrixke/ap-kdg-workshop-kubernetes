@@ -12,7 +12,7 @@ func helloWorld(w http.ResponseWriter, r *http.Request){
 		panic(err)
 	}
 
-    fmt.Fprintf(w, "Hi there, I am running on ", name)
+    fmt.Fprintf(w, "Hi there, I am running on %s", name)
 }
 
 func main() {
