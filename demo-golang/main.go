@@ -6,7 +6,12 @@ import (
 )
 
 func helloWorld(w http.ResponseWriter, r *http.Request){
-    fmt.Fprintf(w, "Hello World")
+    name, err := os.Hostname()
+	if err != nil {
+		panic(err)
+	}
+
+    fmt.Fprintf(w, "Hello students. This is running on ", name)
 }
 
 func main() {
