@@ -18,3 +18,10 @@ spec:
       - name: demo-golang
         image: acrvinvli01.azurecr.io/demo-golang:v0.0.1
         imagePullPolicy: Always
+        resources:
+            requests:
+              memory: "32Mi"
+              cpu: "20m"
+            limits:
+              memory: "64Mi"
+              cpu: "50m"
