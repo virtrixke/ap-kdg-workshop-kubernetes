@@ -1,5 +1,7 @@
 param location string = resourceGroup().location
 
+var containerName = 'cont'
+
 resource acr 'Microsoft.ContainerRegistry/registries@2019-05-01' = {
   name: 'demoacrvinvli01'
   location: location
@@ -23,5 +25,9 @@ resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   }
 }
 
+resource cont 'Microsoft.Storage/storageAccounts/blobServices@2021-02-01' = {
+  name: '${stg.name}/default/${containerName}'
+}
+
 output acrLoginServer string = acr.properties.loginServer
-output storageEndpoint object = stg.properties.primaryEndpoints
+output storageId string = stg.id
