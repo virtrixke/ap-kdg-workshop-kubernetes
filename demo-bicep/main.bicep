@@ -13,7 +13,7 @@ resource acr 'Microsoft.ContainerRegistry/registries@2019-05-01' = {
   }
 }
 
-resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' = {
+resource stg 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   name: 'demostgvinvli01'
   location: location
   sku: {
