@@ -1,6 +1,6 @@
 param location string = resourceGroup().location
 
-var containerName = 'cont'
+var containerName = 'mycont'
 
 resource acr 'Microsoft.ContainerRegistry/registries@2019-05-01' = {
   name: 'demoacrvinvli01'
