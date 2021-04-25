@@ -1,6 +1,6 @@
 param location string = resourceGroup().location
 
-resource acr 'Microsoft.ContainerRegistry/registries@2020-11-01-preview' = {
+resource acr 'Microsoft.ContainerRegistry/registries@2019-05-01' = {
   name: 'demoacrvinvli01'
   location: location
   sku: {
