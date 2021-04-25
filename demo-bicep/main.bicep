@@ -26,7 +26,7 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-02-01' = {
 }
 
 resource cont 'Microsoft.Storage/storageAccounts/blobServices@2021-02-01' = {
-  name: '${stg.name}/default/${containerName}'
+  name: '${stg.name}/${containerName}'
 }
 
 output acrLoginServer string = acr.properties.loginServer
