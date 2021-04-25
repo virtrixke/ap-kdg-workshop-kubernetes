@@ -1,7 +1,5 @@
 param location string = resourceGroup().location
 
-var containerName = 'mycont'
-
 resource acr 'Microsoft.ContainerRegistry/registries@2019-05-01' = {
   name: 'demoacrvinvli01'
   location: location
@@ -26,7 +24,7 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-02-01' = {
 }
 
 resource cont 'Microsoft.Storage/storageAccounts/blobServices@2021-02-01' = {
-  name: '${stg.name}/default'
+  name: '${stg.name}/default/mycont'
 }
 
 output acrLoginServer string = acr.properties.loginServer
