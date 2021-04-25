@@ -5,3 +5,6 @@ or
 
 Set-AzAccount "<subscription>"
 New-AzResourceGroupDeployment -Name bicep -ResourceGroupName <resource-group> -TemplateFile <main.bicep>
+
+-> Whatif
+-> Set access key enabled
